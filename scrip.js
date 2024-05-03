@@ -8,4 +8,6 @@ function setup() {
 
 function draw() {
   background('#2a9d8f');
+  p.display();
+  p.update();
 }
