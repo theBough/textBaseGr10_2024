@@ -15,5 +15,9 @@ function Player(x,y,w,h,col,img){
       //the left arrow key is pressed
       this.x -= 3;
     }
+    if(keyIsDown(38)){
+      //the up arrow key is pressed
+      this.y -= 3;
+    }
   }//end update
 }//end player
