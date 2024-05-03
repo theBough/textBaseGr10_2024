@@ -10,4 +10,10 @@ function Player(x,y,w,h,col,img){
     fill(this.col)
     rect(this.x, this.y, this.w, this.h)
   }//end display
+  this.update = function(){
+    if(keyIsDown(37)){
+      //the left arrow key is pressed
+      this.x -= 3;
+    }
+  }//end update
 }//end player
