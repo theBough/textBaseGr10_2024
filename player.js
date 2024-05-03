@@ -4,7 +4,7 @@ function Player(x,y,w,h,col,img){
   this.w = w;
   this.h = h;
   this.col = col;
-  this.img = loadImage(img);
+  //this.img = loadImage(img);
   
   this.display = function(){
     fill(this.col)
