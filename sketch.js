@@ -20,6 +20,17 @@ function screenChange(){
     //The player has gone off the left side
     p.x = width
   }//end left boundry
-  
+   if(p.x > width){
+    //The player has gone off the right side
+    p.x = 0
+  }//end right boundry
+  if(p.y > height){
+    //The player has gone off the bottom side
+    p.y = 0
+  }//end bottom boundry
+   if(p.y < 0){
+    //The player has gone off the top side
+    p.y = height
+  }//end top boundry
   
 }
