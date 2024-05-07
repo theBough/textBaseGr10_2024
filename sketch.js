@@ -1,18 +1,21 @@
 let p;
-let w;
+let w =[];
 let myFont;
 
 function setup() {
   createCanvas(400, 400);
   p = new Player(200,200,10,10,'#e76f51',"nothing")
-  w = new Wall(width -20,0, 20,height,"#023047")
+  w.push(new Wall(width -20,0, 20,height,"#023047"))
   myFont = loadFont("wght.ttf")
 }
 function draw() {
   background('#2a9d8f');
   p.display();
   p.update();
-  w.display()
+  for(let i =0; i<w.length ; i++){
+    w[i].display()
+  }//end loop
+  
   textFont(myFont)
   textSize(50);
   text("Adventure", 50,50)
