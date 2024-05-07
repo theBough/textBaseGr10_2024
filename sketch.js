@@ -15,7 +15,9 @@ function draw() {
   p.display();
   p.update();
   for(let i =0; i<w.length ; i++){
+    push()
     w[i].display()
+    pop()
   }//end loop
   
   textFont(myFont)
