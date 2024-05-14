@@ -2,32 +2,38 @@ let rooms = [];
 
 function fillRooms(){
   rooms = [
-    [roomZero, roomOne, roomTwo],
-    [roomThree, roomFour, roomFive]
-    ]
+    [room0,room1,room2],
+    [room3,room4,room5],
+    [room6,room7,room8],
+  ]
 }//end fillRooms
-
-let roomZero = function(){
-  backColour = "pink"
-  w = []
-  w.push(new Wall (0,0,300,10,"purple"))
-  w.push(new Wall (290,0,10,300,"purple"))
-}//end RoomZero
-
-let roomOne = function(){
-  w = []
-  backColour = "red"
-  w.push(new Wall (290,0,10,300,"purple"))
-}//end RoomOne
-let roomTwo = function(){
-  backColour = "purple"
-}//end RoomTwo
-let roomThree = function(){
-  backColour = "brown"
-}//end RoomZero
-let roomFour = function(){
-  backColour = "black"
-}//end RoomOne
-let roomFive = function(){
-  backColour = "grey"
-}//end RoomTwo
+let room0 = function(){
+  w = [];
+  w.push(new Wall(200, 150, 20, 100, "#f4a261"));
+  w.push(new Wall(0, 0, 20, height, "#386641"));
+  w.push(new Wall(0, 0, width, 20, "#bc4749"));
+}
+let room1 = function(){
+  
+}
+let room2 = function(){
+  
+}
+let room3 = function(){
+  
+}
+let room4 = function(){
+  
+}
+let room5 = function(){
+  
+}
+let room6 = function(){
+  
+}
+let room7 = function(){
+  
+}
+let room8 = function(){
+  
+}
