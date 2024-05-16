@@ -23,6 +23,7 @@ function draw() {
   text("Adventure", 50, 50);
   screenChange();
  rooms[activeRow][activeColumn].call();
+  checkForCollision();
 }
 function screenChange() {
   if (p.x + p.w < 0) {
