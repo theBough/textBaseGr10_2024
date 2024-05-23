@@ -15,6 +15,8 @@ function Key(x, y, w, h, col, img) {
     if(this.acquired){
       this.x = p.x + p.w;
       this.y = p.y + (p.h/2);
+       this.img.resize(this.w, this.h);
+      image(this.img, this.x, this.y);
     }
   }; //end display
   
