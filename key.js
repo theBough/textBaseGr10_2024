@@ -12,6 +12,10 @@ function Key(x, y, w, h, col, img) {
       this.img.resize(this.w, this.h);
       image(this.img, this.x, this.y);
     }//end if
+    if(this.acquired){
+      this.x = p.x + p.w;
+      this.y = p.y + (p.h/2);
+    }
   }; //end display
   
   this.playerCollision = function(){
