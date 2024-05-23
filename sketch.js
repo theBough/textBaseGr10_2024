@@ -1,10 +1,12 @@
 let p;
+let k;
 let w = [];
 let myFont
 let activeRow, activeColoumn
 function setup() {
   createCanvas(400, 400);
   p = new Player(200, 200, 10, 10, "#e9c46a", "nothing");
+  k = new Key(20,20,20,20,"#e9c46a","key.jpg")
   myFont = loadFont("wght.ttf");
   activeRow = 0;
   activeColumn = 0;
@@ -13,6 +15,8 @@ function draw() {
   background("#2a9d8f");
   p.display();
   p.update();
+  k.display();
+  k.playerCollision();
   for (let i = 0; i < w.length; i++) {
     push();
     w[i].display();
