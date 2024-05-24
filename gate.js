@@ -1,4 +1,4 @@
-function Gate(x,y,w,h,col,img){
+function Gate(x,y,w,h,col){
   this.x = x;
   this.y = y;
   this.w = w;
