@@ -18,6 +18,7 @@ function draw() {
   k.display();
   k.playerCollision();
   g.display()
+  g.collisionWithKey()
   for (let i = 0; i < w.length; i++) {
     push();
     w[i].display();
