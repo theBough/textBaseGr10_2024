@@ -4,30 +4,33 @@ function Gate(x,y,w,h,col){
   this.w = w;
   this.h = h;
   this.col = col;
+  this.show = true;
   //this.img = loadImage(img);
   
   this.display = function(){
-    fill(this.col)
-    rect(this.x, this.y, this.w, this.h)
+    if(this.show){
+      fill(this.col)
+      rect(this.x, this.y, this.w, this.h)
+    }
   }//end display
   
   this.collisionWithKey = function() {
   
     //check if we hit the left of any wall
-    if (this.y <= g.y + g.h && this.y + this.h >= g.y && this.x <= g.x + g.w && this.x >= g.x) {
-      this.x += 5
+    if (this.y <= k.y + k.h && this.y + this.h >= k.y && this.x <= k.x + k.w && this.x >= k.x) {
+      this.show = false
     }
     //check if we hit the right of any wall
-    if (this.y <= g.y + g.h && this.y + this.h >= g.y && this.x + this.w >= g.x && this.x <= g.x + g.w) {
-      this.x -= 5
+    if (this.y <= k.y + k.h && this.y + this.h >= k.y && this.x + this.w >= k.x && this.x <= k.x + k.w) {
+      this.show = false
     }
     //check if we hit the bottom of any wall
-    if (this.x <= g.x + g.w && this.x + this.w >= g.x && this.y <= g.y + g.h && this.y >= g.y) {
-      this.y += 5;
+    if (this.x <= k.x + k.w && this.x + this.w >= k.x && this.y <= k.y + k.h && this.y >= k.y) {
+      this.show = false
     }
     //check if we hit the tothis of any wall
-    if (this.x <= g.x + g.w && this.x + this.w >= g.x && this.y + this.h >= g.y && this.y <= g.y + g.h) {
-      this.y -= 5;
+    if (this.x <= k.x + k.w && this.x + this.w >= k.x && this.y + this.h >= k.y && this.y <= k.y + k.h) {
+      this.show = false
     }
 
 }//end colision
