@@ -6,7 +6,7 @@ function setup() {
   createCanvas(400, 400);
   p = new Player(200, 200, 10, 10, "#e9c46a", "nothing");
   k = new Key(20,20,20,20,"#e9c46a","key.jpg")
-  g = new Gate(300,150,100,20,"white")
+  g = new Gate(300,150,100,100,"white")
   myFont = loadFont("wght.ttf");
   activeRow = 0;
   activeColumn = 0;
@@ -19,6 +19,7 @@ function draw() {
   k.playerCollision();
   g.display()
   g.collisionWithKey()
+  g.collisionWPlayer()
   for (let i = 0; i < w.length; i++) {
     push();
     w[i].display();
