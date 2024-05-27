@@ -1,4 +1,4 @@
-function Key(x, y, w, h, col, img) {
+function Key(x, y, w, h, col, img,room) {
   this.x = x;
   this.y = y;
   this.w = w;
@@ -6,9 +6,10 @@ function Key(x, y, w, h, col, img) {
   this.col = col;
   this.img = loadImage(img);
   this.acquired = false;
+  this.room = room
 
   this.display = function () {
-    if (activeRow == 2 && activeColumn == 1) {
+    if (this.room == rooms[activeRow][activeColumn]) {
       this.img.resize(this.w, this.h);
       image(this.img, this.x, this.y);
     }//end if
@@ -21,7 +22,7 @@ function Key(x, y, w, h, col, img) {
   }; //end display
   
   this.playerCollision = function(){
-    if (p.y <= this.y + this.h && p.y + p.h >=this.y && p.x <= this.x +this.w && p.x >= this.x) {
+    if (p.y <= this.y + this.h && p.y + p.h >=this.y && p.x <= this.x +this.w && p.x >= this.x && this.room == rooms[activeRow][activeColumn]) {
       this.acquired = true;
     }
 
