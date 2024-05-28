@@ -1,14 +1,15 @@
-function Gate(x,y,w,h,col){
+function Gate(x,y,w,h,col, room){
   this.x = x;
   this.y = y;
   this.w = w;
   this.h = h;
   this.col = col;
   this.show = true;
+  this.room = room;
   //this.img = loadImage(img);
   
   this.display = function(){
-    if(this.show){
+    if(this.show  && this.room == rooms[activeRow][activeColumn]){
       fill(this.col)
       rect(this.x, this.y, this.w, this.h)
     }
