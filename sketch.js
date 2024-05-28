@@ -6,31 +6,43 @@ function setup() {
   createCanvas(400, 400);
   p = new Player(200, 200, 10, 10, "#e9c46a", "nothing");
   k = new Key(20,20,20,20,"#e9c46a","key.jpg",rooms[0][0])
-  g = new Gate(300,150,100,100,"white")
+  g = new Gate(300,150,100,100,"white", rooms[0][1])
   myFont = loadFont("wght.ttf");
   activeRow = 0;
   activeColumn = 0;
 }
 function draw() {
   background("#2a9d8f");
-  p.display();
-  p.update();
-  k.display();
-  k.playerCollision();
-  g.display()
-  g.collisionWithKey()
-  g.collisionWPlayer()
-  for (let i = 0; i < w.length; i++) {
-    push();
-    w[i].display();
-    pop();
-  } //end loop
+  playerStuff();
+  gateStuff();
+  keyStuff();
+  wallStuff();  
   textFont(myFont);
   textSize(50);
   text("Adventure", 50, 50);
   screenChange();
  rooms[activeRow][activeColumn].call();
   checkForCollision();
+}
+function playerStuff(){
+  p.display();
+  p.update();
+}
+function gateStuff(){
+  g.display()
+  g.collisionWithKey()
+  g.collisionWPlayer()
+}
+function keyStuff(){
+   k.display();
+  k.playerCollision();
+}
+function wallStuff(){
+  for (let i = 0; i < w.length; i++) {
+    push();
+    w[i].display();
+    pop();
+  } //end loop
 }
 function screenChange() {
   if (p.x + p.w < 0) {
