@@ -1,4 +1,4 @@
-let p,k,g;
+let p,k,g,e;
 let w = [];
 let myFont
 let activeRow, activeColoumn
@@ -7,6 +7,7 @@ function setup() {
   p = new Player(200, 200, 10, 10, "#e9c46a", "nothing");
   k = new Key(20,20,20,20,"#e9c46a","key.jpg",rooms[0][0])
   g = new Gate(300,150,100,100,"white", rooms[0][1])
+  e = new Enemy(200,200,30,30,"white", rooms[1][1])
   //Change line 11 and place the font you have
   myFont = loadFont("wght.ttf");
   activeRow = 0;
@@ -14,6 +15,7 @@ function setup() {
 }
 function draw() {
   background("#2a9d8f");
+  enemyStuff();
   playerStuff();
   gateStuff();
   keyStuff();
@@ -23,7 +25,11 @@ function draw() {
   text("Adventure", 50, 50);
   screenChange();
  rooms[activeRow][activeColumn].call();
-  checkForCollision();
+  //checkForCollision();
+}
+function enemyStuff(){
+  e.display()
+  g.collisionWPlayer()
 }
 function playerStuff(){
   p.display();
