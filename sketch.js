@@ -29,6 +29,7 @@ function draw() {
 }
 function enemyStuff(){
   e.display()
+  e.update();
   g.collisionWPlayer()
 }
 function playerStuff(){
