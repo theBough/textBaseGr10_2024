@@ -6,15 +6,30 @@ function Enemy(x, y, w, h, col, room) {
   this.col = col;
   this.show = true;
   this.room = room;
+  this.xSpeed = 1;
+  this.ySpeed = 1;
   //this.img = loadImage(img);
 
   this.display = function () {
     if (this.show && this.room == rooms[activeRow][activeColumn]) {
       fill(this.col);
-      rect(this.x, this.y, this.w, this.h);
+      ellipse(this.x, this.y, 10);
     }
   }; //end display
-
+  this.update = function(){
+    this.x += this.xSpeed
+    this.y += this.ySpeed
+    if(this.x > p.x){
+      this.xSpeed = -1
+    }else{
+      this.xSpeed  =1;
+    }
+     if(this.y > p.y){
+      this.ySpeed = -1
+    }else{
+      this.ySpeed  =1;
+    }
+  }
   this.collisionWithKey = function () {
     if (this.show && this.room == rooms[activeRow][activeColumn]) {
       //check if we hit the left of any wall
