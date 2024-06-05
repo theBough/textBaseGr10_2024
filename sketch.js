@@ -4,7 +4,7 @@ let myFont
 let activeRow, activeColoumn
 function setup() {
   createCanvas(400, 400);
-  p = new Player(200, 200, 10, 10, "#e9c46a", "nothing");
+  p = new Player(200, 200, 10, 10, "#e9c46a", "nothing",rooms[1][0]);
   k = new Key(20,20,20,20,"#e9c46a","key.jpg",rooms[0][0])
   g = new Gate(300,150,100,100,"white", rooms[0][1])
   e = new Enemy(200,200,40,"white", rooms[1][1])
