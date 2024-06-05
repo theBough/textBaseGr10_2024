@@ -13,7 +13,7 @@ function Player(x, y, w, h, col, img, room) {
   }; //end display
   this.update = function () {
     if (rooms[activeRow][activeColumn] == this.room) {
-      console.log("test")
+  
       if (keyIsDown(37)) {
         //the left arrow key is pres
         this.x += 3;
