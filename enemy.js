@@ -1,8 +1,7 @@
-function Enemy(x, y, w, h, col, room) {
+function Enemy(x, y,r, col, room) {
   this.x = x;
   this.y = y;
-  this.w = w;
-  this.h = h;
+  this.r = r
   this.col = col;
   this.show = true;
   this.room = room;
@@ -13,7 +12,7 @@ function Enemy(x, y, w, h, col, room) {
   this.display = function () {
     if (this.show && this.room == rooms[activeRow][activeColumn]) {
       fill(this.col);
-      ellipse(this.x, this.y, 10);
+      ellipse(this.x, this.y, this.r);
     }
   }; //end display
   this.update = function(){
