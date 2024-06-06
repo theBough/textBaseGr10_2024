@@ -1,7 +1,7 @@
-function Enemy(x, y,r, col, room) {
+function Enemy(x, y, r, col, room) {
   this.x = x;
   this.y = y;
-  this.r = r
+  this.r = r;
   this.col = col;
   this.show = true;
   this.room = room;
@@ -15,20 +15,20 @@ function Enemy(x, y,r, col, room) {
       ellipse(this.x, this.y, this.r);
     }
   }; //end display
-  this.update = function(){
-    this.x += this.xSpeed
-    this.y += this.ySpeed
-    if(this.x > p.x){
-      this.xSpeed = -1
-    }else{
-      this.xSpeed  =1;
+  this.update = function () {
+    this.x += this.xSpeed;
+    this.y += this.ySpeed;
+    if (this.x > p.x) {
+      this.xSpeed = -1;
+    } else {
+      this.xSpeed = 1;
     }
-     if(this.y > p.y){
-      this.ySpeed = -1
-    }else{
-      this.ySpeed  =1;
+    if (this.y > p.y) {
+      this.ySpeed = -1;
+    } else {
+      this.ySpeed = 1;
     }
-  }
+  };
   this.collisionWithKey = function () {
     if (this.show && this.room == rooms[activeRow][activeColumn]) {
       //check if we hit the left of any wall
@@ -73,43 +73,17 @@ function Enemy(x, y,r, col, room) {
   this.collisionWPlayer = function () {
     if (this.show && this.room == rooms[activeRow][activeColumn]) {
       //check if we hit the left of any wall
-      if (
-        p.y <= this.y + this.h &&
-        p.y + p.h >= this.y &&
-        p.x <= this.x + this.w &&
-        p.x >= this.x
-      ) {
-        p.x += 5;
-      }
-
-      //check if we hit the right of any wall
-      if (
-        p.y <= this.y + this.h &&
-        p.y + p.h >= this.y &&
-        p.x + p.w >= this.x &&
-        p.x <= this.x + this.w
-      ) {
-        p.x -= 5;
-      }
-
-      //check if we hit the bottom of any wall
-      if (
-        p.x <= this.x + this.w &&
-        p.x + p.w >= this.x &&
-        p.y <= this.y + this.h &&
-        p.y >= this.y
-      ) {
-        p.y += 5;
-      }
-
-      //check if we hit the top of any wall
-      if (
-        p.x <= this.x + this.w &&
-        p.x + p.w >= this.x &&
-        p.y + p.h >= this.y &&
-        p.y <= this.y + this.h
-      ) {
-        p.y -= 5;
+      let dx = Math.abs(this.x - p.x);
+      let dy = Math.abs(this.y - p.y);
+      dx = dx * dx
+      dy = dy * dy
+      let distance = Math.sqrt(dx + dy);
+      console.log(distance);
+      if (distance < 50) {
+        activeRow = 0;
+        activeColumn = 0;
+        p.x = 200;
+        p.y = 200;
       }
     }
   };
