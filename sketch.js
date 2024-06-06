@@ -30,7 +30,7 @@ function draw() {
 function enemyStuff(){
   e.display()
   e.update();
-  g.collisionWPlayer()
+  e.collisionWPlayer()
 }
 function playerStuff(){
   p.display();
